@@ -1,0 +1,179 @@
+%% MCA Entity Relationship Model
+%% Status: INFERRED from entity model + statutory logic
+%% Evidence: Companies Act 2013 + entity model documentation
+
+erDiagram
+    PERSON ||--o{ DIN : "holds"
+    PERSON ||--o{ DSC : "owns"
+    PERSON ||--o{ PORTAL_ACCOUNT : "creates"
+    PERSON ||--o{ DIRECTOR_COMPANY : "serves as director"
+    PERSON ||--o{ PARTNER_LLP : "serves as partner"
+    PERSON ||--o{ SHAREHOLDER_COMPANY : "owns shares"
+    
+    PORTAL_ACCOUNT ||--o{ FILING : "submits"
+    PORTAL_ACCOUNT }o--|| PERSON : "belongs to"
+    
+    DIN ||--o{ DIRECTOR_COMPANY : "used in"
+    DIN }o--|| PERSON : "belongs to"
+    
+    DSC ||--o{ FILING : "signs"
+    DSC }o--|| PERSON : "belongs to"
+    
+    COMPANY ||--o{ DIRECTOR_COMPANY : "has directors"
+    COMPANY ||--o{ SHAREHOLDER_COMPANY : "has shareholders"
+    COMPANY ||--o{ FILING : "files"
+    COMPANY ||--o{ CHARGE : "has charges"
+    
+    LLP ||--o{ PARTNER_LLP : "has partners"
+    LLP ||--o{ FILING : "files"
+    
+    DIRECTOR_COMPANY }o--|| COMPANY : "belongs to"
+    DIRECTOR_COMPANY }o--|| DIN : "identified by"
+    DIRECTOR_COMPANY }o--|| PERSON : "is"
+    
+    PARTNER_LLP }o--|| LLP : "belongs to"
+    PARTNER_LLP }o--|| PERSON : "is"
+    
+    SHAREHOLDER_COMPANY }o--|| COMPANY : "belongs to"
+    SHAREHOLDER_COMPANY }o--|| PERSON : "is"
+    
+    FILING }o--|| COMPANY : "relates to" 
+    FILING }o--|| LLP : "relates to"
+    FILING }o--|| ROC : "submitted to"
+    FILING }o--|| PORTAL_ACCOUNT : "submitted by"
+    FILING }o--o{ DSC : "signed by"
+    
+    CHARGE }o--|| COMPANY : "secured on"
+    CHARGE ||--o{ FILING : "registered via"
+    
+    ROC ||--o{ COMPANY : "registers"
+    ROC ||--o{ LLP : "registers"
+    
+    PERSON {
+        string person_id PK
+        string pan_number UK
+        string aadhar_number UK
+        string name
+        string email
+        string mobile
+        string nationality
+        date date_of_birth
+        json address
+        string kyc_status
+    }
+    
+    DIN {
+        string din_number PK
+        string person_id FK
+        date allotment_date
+        string status
+        date kyc_last_date
+        string kyc_status
+    }
+    
+    DSC {
+        string dsc_id PK
+        string person_id FK
+        string class_type
+        date valid_from
+        date valid_to
+        string issuer
+        string status
+    }
+    
+    PORTAL_ACCOUNT {
+        string account_id PK
+        string person_id FK
+        string user_type
+        string email UK
+        string mobile
+        date created_date
+        string status
+        json roles
+    }
+    
+    COMPANY {
+        string cin PK
+        string company_name
+        string company_type
+        string roc_code
+        date incorporation_date
+        string status
+        decimal authorized_capital
+        decimal paid_up_capital
+        json registered_office
+        string email
+    }
+    
+    LLP {
+        string llpin PK
+        string llp_name
+        string roc_code
+        date incorporation_date
+        string status
+        decimal contribution
+        json registered_office
+    }
+    
+    DIRECTOR_COMPANY {
+        string relationship_id PK
+        string cin FK
+        string din FK
+        string person_id FK
+        string designation
+        date appointment_date
+        date cessation_date
+        string status
+    }
+    
+    PARTNER_LLP {
+        string relationship_id PK
+        string llpin FK
+        string person_id FK
+        string partner_type
+        date appointment_date
+        date cessation_date
+        string status
+    }
+    
+    SHAREHOLDER_COMPANY {
+        string relationship_id PK
+        string cin FK
+        string person_id FK
+        int number_of_shares
+        decimal share_percentage
+        string shareholder_type
+    }
+    
+    FILING {
+        string srn PK
+        string form_code
+        string entity_id FK
+        string entity_type
+        string account_id FK
+        datetime submission_date
+        string status
+        string processing_mode
+        decimal fee_amount
+        string payment_status
+        json attachments
+    }
+    
+    CHARGE {
+        string charge_id PK
+        string cin FK
+        string charge_holder_name
+        date creation_date
+        decimal charge_amount
+        string charge_type
+        string status
+        date satisfaction_date
+    }
+    
+    ROC {
+        string roc_code PK
+        string roc_name
+        string state
+        string city
+        json contact_details
+    }

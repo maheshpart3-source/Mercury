@@ -1,0 +1,82 @@
+%% MCA Portal - Current Page Map (Based on 2021 V3 Documentation)
+%% Status: UNVERIFIED - Portal access blocked
+%% Evidence: 2021 V3 FAQ + Seed URLs
+
+graph TB
+    HOME[MCA Homepage]
+    
+    %% Top-level sections
+    HOME --> ABOUT[About MCA]
+    HOME --> ACTS[Acts & Rules]
+    HOME --> WORKSPACE[My Workspace<br/>Authenticated]
+    HOME --> SERVICES[MCA Services]
+    HOME --> DATA[Data & Reports]
+    HOME --> HELP[Help & FAQs]
+    HOME --> CONTACT[Contact Us]
+    
+    %% About MCA sub-pages
+    ABOUT --> ABOUT1[About Ministry]
+    ABOUT --> ABOUT2[Organisation]
+    ABOUT --> ABOUT3[MCA Offices]
+    
+    %% Acts & Rules sub-pages
+    ACTS --> ACTS1[Acts]
+    ACTS --> ACTS2[Rules]
+    ACTS --> ACTS3[Notifications]
+    ACTS --> ACTS4[Circulars]
+    
+    %% My Workspace (structure unknown)
+    WORKSPACE --> WS1[Dashboard]
+    WORKSPACE --> WS2[Drafts]
+    WORKSPACE --> WS3[My Filings]
+    WORKSPACE --> WS4[My Payments]
+    WORKSPACE --> WS5[My Profile]
+    
+    %% MCA Services
+    SERVICES --> SVC1[Company Services]
+    SERVICES --> SVC2[LLP Services]
+    SERVICES --> SVC3[E-Filing]
+    SERVICES --> SVC4[DIN Services]
+    SERVICES --> SVC5[DSC Services]
+    SERVICES --> SVC6[Master Data]
+    SERVICES --> SVC7[Documents]
+    SERVICES --> SVC8[Fee & Payment]
+    SERVICES --> SVC9[Complaints]
+    SERVICES --> SVC10[Investor Services]
+    SERVICES --> SVC11[Track Status]
+    SERVICES --> SVC12[Specialized]
+    
+    %% Data & Reports
+    DATA --> DATA1[Library]
+    DATA --> DATA2[Reports & Statistics]
+    DATA --> DATA3[ROC Information]
+    
+    %% Help
+    HELP --> HELP1[FAQs]
+    HELP --> HELP2[Manuals]
+    HELP --> HELP3[Tutorials]
+    
+    %% Contact
+    CONTACT --> CONT1[Helpdesk]
+    CONTACT --> CONT2[ROC Contacts]
+    
+    %% Homepage service cards
+    HOME -.Quick Access.-> CARD1[Register Company]
+    HOME -.Quick Access.-> CARD2[Company Forms]
+    HOME -.Quick Access.-> CARD3[Close Company]
+    HOME -.Quick Access.-> CARD4[Register LLP]
+    HOME -.Quick Access.-> CARD5[LLP Forms]
+    HOME -.Quick Access.-> CARD6[Close LLP]
+    
+    %% Styling
+    classDef verified fill:#90EE90
+    classDef unverified fill:#FFE4B5
+    classDef unknown fill:#FFB6C1
+    classDef auth fill:#ADD8E6
+    
+    class HOME,ABOUT,ACTS,SERVICES,DATA,HELP,CONTACT verified
+    class WORKSPACE,WS1,WS2,WS3,WS4,WS5 auth
+    class ABOUT1,ABOUT2,ABOUT3,ACTS1,ACTS2,ACTS3,ACTS4 unverified
+    class SVC1,SVC2,SVC3,SVC4,SVC5,SVC6,SVC7,SVC8,SVC9,SVC10,SVC11,SVC12 unverified
+    class DATA1,DATA2,DATA3,HELP1,HELP2,HELP3,CONT1,CONT2 unverified
+    class CARD1,CARD2,CARD3,CARD4,CARD5,CARD6 verified

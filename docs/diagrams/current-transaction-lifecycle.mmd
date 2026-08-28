@@ -1,0 +1,86 @@
+%% MCA Filing Transaction Lifecycle
+%% Status: INFERRED from transaction model + verified statistics
+%% Evidence: 3.84cr filings (2021-2025), 86.7% STP rate, 10.6% manual review, 2.2% rejection
+
+stateDiagram-v2
+    [*] --> Draft: User starts filing
+    
+    Draft --> Validating: Submit for validation
+    Validating --> Validated: Pass all checks
+    Validating --> Draft: Validation errors
+    
+    Validated --> DSCSigning: User signs
+    DSCSigning --> Validated: Signature failure
+    DSCSigning --> FeeCalculation: Signature success
+    
+    FeeCalculation --> Payment: Fee calculated
+    Payment --> FeeCalculation: Payment failure
+    Payment --> Submitted: Payment success
+    
+    Submitted --> STPProcessing: Auto-eligible (86.7%)
+    Submitted --> ManualReview: Manual-eligible (10.6%)
+    
+    STPProcessing --> Approved: Auto-approve
+    STPProcessing --> ManualReview: STP rules fail
+    
+    ManualReview --> Query: Deficiencies found
+    ManualReview --> Approved: Manual approve
+    ManualReview --> Rejected: Non-compliant (2.2%)
+    
+    Query --> Resubmission: User responds
+    Resubmission --> ManualReview: Re-review
+    Resubmission --> Rejected: Timeout/invalid
+    
+    Approved --> RegistryUpdate: Update MCA registry
+    RegistryUpdate --> Completed: Success
+    
+    Rejected --> [*]: Terminal state
+    Completed --> [*]: Terminal state
+    
+    note right of Draft
+        User workspace
+        Can save drafts
+        Pre-fill available
+    end note
+    
+    note right of Validating
+        Field validations
+        Business rule checks
+        Form-specific rules
+    end note
+    
+    note right of DSCSigning
+        Class 2/3 DSC required
+        Multiple signers possible
+        Signing order enforced
+    end note
+    
+    note right of Payment
+        Online payment gateway
+        Challan generation
+        Fee varies by form
+    end note
+    
+    note right of STPProcessing
+        86.7% of filings
+        Automated approval
+        ~24-48 hours
+    end note
+    
+    note right of ManualReview
+        10.6% of filings
+        ROC/RD review
+        15-21 days SLA
+    end note
+    
+    note right of Query
+        Deficiency notice
+        Response deadline
+        Resubmission allowed
+    end note
+    
+    note right of Rejected
+        2.2% of filings
+        Appeal possible
+        Refund partial fees
+    end note

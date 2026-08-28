@@ -1,0 +1,97 @@
+%% MCA Portal - Key User Flows
+%% Status: INFERRED from user flows documentation
+%% Evidence: Service catalogue + transaction model + training materials
+
+graph TB
+    START([User Intent])
+    
+    %% Flow 1: Company Incorporation
+    START --> INC1{Register<br/>Company?}
+    INC1 -->|Yes| INC2[Reserve Name<br/>RUN]
+    INC2 --> INC3[Name Approved?]
+    INC3 -->|Yes| INC4[Fill SPICe+ Part A<br/>Company Details]
+    INC4 --> INC5[Fill SPICe+ Part B<br/>Connected Forms]
+    INC5 --> INC6[Attach Documents<br/>ID, Address, AOA]
+    INC6 --> INC7[DSC Sign<br/>Subscribers + Directors]
+    INC7 --> INC8[Pay Fees]
+    INC8 --> INC9[Submit SPICe+]
+    INC9 --> INC10{STP or<br/>Manual?}
+    INC10 -->|STP 86.7%| INC11[Auto-Approve<br/>24-48h]
+    INC10 -->|Manual 10.6%| INC12[ROC Review<br/>15-21 days]
+    INC11 --> INC13[CIN Issued]
+    INC12 --> INC14{Approved?}
+    INC14 -->|Yes| INC13
+    INC14 -->|Query| INC15[Respond to Query]
+    INC15 --> INC12
+    INC14 -->|Reject| INC16([Incorporation Failed])
+    INC13 --> INC17([Company Registered])
+    
+    %% Flow 2: Annual Compliance
+    START --> ANN1{File Annual<br/>Returns?}
+    ANN1 -->|Yes| ANN2[Login to<br/>My Workspace]
+    ANN2 --> ANN3[Navigate to<br/>Company Services]
+    ANN3 --> ANN4[Select AOC-4<br/>Financial Statements]
+    ANN4 --> ANN5[Upload Audited<br/>Balance Sheet]
+    ANN5 --> ANN6[DSC Sign<br/>Director + Auditor]
+    ANN6 --> ANN7[Pay Fees]
+    ANN7 --> ANN8[Submit AOC-4]
+    ANN8 --> ANN9[Select MGT-7<br/>Annual Return]
+    ANN9 --> ANN10[Fill Statutory<br/>Registers Data]
+    ANN10 --> ANN11[DSC Sign<br/>Director + CS]
+    ANN11 --> ANN12[Pay Fees]
+    ANN12 --> ANN13[Submit MGT-7]
+    ANN13 --> ANN14[Both Forms<br/>Approved]
+    ANN14 --> ANN15([Compliance Complete])
+    
+    %% Flow 3: Public Search
+    START --> PUB1{Search Company<br/>Data?}
+    PUB1 -->|Yes| PUB2[Access Public<br/>Master Data]
+    PUB2 --> PUB3[Search by<br/>CIN/Name]
+    PUB3 --> PUB4[View Company<br/>Details]
+    PUB4 --> PUB5{Need<br/>Documents?}
+    PUB5 -->|Yes| PUB6[Navigate to<br/>Public Documents]
+    PUB5 -->|No| PUB10([Search Complete])
+    PUB6 --> PUB7[Select Documents]
+    PUB7 --> PUB8{Certified<br/>Copy?}
+    PUB8 -->|Yes| PUB9[Pay Fees +<br/>Download]
+    PUB8 -->|No| PUB9
+    PUB9 --> PUB10
+    
+    %% Flow 4: DIR-3 KYC
+    START --> KYC1{Submit<br/>DIR-3 KYC?}
+    KYC1 -->|Yes| KYC2[Login with DIN]
+    KYC2 --> KYC3[Pre-filled Form<br/>DIR-3 KYC]
+    KYC3 --> KYC4[Update if Changed<br/>Mobile, Email, Address]
+    KYC4 --> KYC5[Upload Documents<br/>PAN, Address Proof]
+    KYC5 --> KYC6[DSC Sign]
+    KYC6 --> KYC7[Submit<br/>No Fee]
+    KYC7 --> KYC8[Auto-Approve<br/>STP]
+    KYC8 --> KYC9([KYC Updated])
+    
+    %% Flow 5: Helpdesk
+    START --> HELP1{Need<br/>Help?}
+    HELP1 -->|Yes| HELP2[Check FAQs]
+    HELP2 --> HELP3{Issue<br/>Resolved?}
+    HELP3 -->|No| HELP4[File Complaint/<br/>Grievance]
+    HELP4 --> HELP5[Receive Ticket<br/>Number]
+    HELP5 --> HELP6[Track Status]
+    HELP6 --> HELP7{Resolved?}
+    HELP7 -->|No| HELP8[Escalate]
+    HELP8 --> HELP6
+    HELP7 -->|Yes| HELP9([Issue Resolved])
+    HELP3 -->|Yes| HELP9
+    
+    %% Styling
+    classDef decision fill:#FFD700
+    classDef action fill:#87CEEB
+    classDef terminal fill:#90EE90
+    classDef error fill:#FFB6C1
+    
+    class INC1,INC3,INC10,INC14,ANN1,PUB1,PUB5,PUB8,KYC1,HELP1,HELP3,HELP7 decision
+    class INC2,INC4,INC5,INC6,INC7,INC8,INC9,INC11,INC12,INC15 action
+    class ANN2,ANN3,ANN4,ANN5,ANN6,ANN7,ANN8,ANN9,ANN10,ANN11,ANN12,ANN13,ANN14 action
+    class PUB2,PUB3,PUB4,PUB6,PUB7,PUB9 action
+    class KYC2,KYC3,KYC4,KYC5,KYC6,KYC7,KYC8 action
+    class HELP2,HELP4,HELP5,HELP6,HELP8 action
+    class INC13,INC17,ANN15,PUB10,KYC9,HELP9 terminal
+    class INC16 error

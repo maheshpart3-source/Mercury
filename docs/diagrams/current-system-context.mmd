@@ -1,0 +1,129 @@
+%% MCA Portal - System Context & Dependencies
+%% Status: INFERRED from service catalogue + assumptions
+%% Evidence: Service catalogue + transaction model + 2021 documentation
+
+graph TB
+    subgraph USERS["User Groups"]
+        U1[Public Citizens]
+        U2[Company Directors]
+        U3[Professionals<br/>CS, CA, Advocates]
+        U4[Professional Staff]
+        U5[Corporate Users]
+    end
+    
+    subgraph PORTAL["MCA V3 Portal"]
+        P1[Public Website]
+        P2[User Portal<br/>My Workspace]
+        P3[Transaction Engine]
+        P4[STP Processing]
+        P5[Payment Gateway]
+        P6[DSC Verification]
+        P7[Document Management]
+        P8[Notification Service]
+    end
+    
+    subgraph BACKEND["Backend Systems - INFERRED"]
+        B1[Company Registry<br/>Master Database]
+        B2[LLP Registry]
+        B3[Director Database<br/>DIN Master]
+        B4[Filing Repository]
+        B5[Document Repository]
+        B6[Charge Registry]
+        B7[Fee Master]
+        B8[Audit Logs]
+    end
+    
+    subgraph EXTERNAL["External Systems - INFERRED"]
+        E1[Payment Gateways<br/>Online Banking]
+        E2[DSC Certifying<br/>Authorities]
+        E3[Email Gateway]
+        E4[SMS Gateway]
+        E5[Income Tax<br/>PAN Validation]
+        E6[UIDAI<br/>Aadhaar Validation]
+    end
+    
+    subgraph LEGACY["Legacy Systems - STATUS UNKNOWN"]
+        L1[MCA V2 Portal<br/>Pre-2021]
+        L2[e-Scrutiny System]
+        L3[CMS System]
+        L4[Regional Offices<br/>Internal Systems]
+    end
+    
+    subgraph STAKEHOLDERS["Internal Stakeholders"]
+        S1[ROC Officers]
+        S2[Regional Directors]
+        S3[MCA Officials]
+        S4[Helpdesk Team]
+    end
+    
+    %% User interactions
+    U1 --> P1
+    U2 --> P2
+    U3 --> P2
+    U4 --> P2
+    U5 --> P2
+    
+    %% Portal internal flow
+    P1 --> P7
+    P2 --> P3
+    P3 --> P4
+    P3 --> P5
+    P3 --> P6
+    P3 --> P7
+    P3 --> P8
+    
+    %% Portal to Backend
+    P3 --> B1
+    P3 --> B2
+    P3 --> B3
+    P3 --> B4
+    P7 --> B5
+    P3 --> B6
+    P5 --> B7
+    P3 --> B8
+    
+    %% Backend to External
+    P5 --> E1
+    P6 --> E2
+    P8 --> E3
+    P8 --> E4
+    P3 -.PAN Verify.-> E5
+    P3 -.Aadhaar Verify.-> E6
+    
+    %% Legacy integration - UNKNOWN
+    P3 -.Migration?.-> L1
+    P4 -.Integration?.-> L2
+    P3 -.Integration?.-> L3
+    B1 -.Sync?.-> L4
+    
+    %% Internal stakeholder access
+    S1 --> P2
+    S2 --> P2
+    S3 --> P2
+    S4 --> P2
+    
+    %% Data flows
+    B4 --> B1
+    B4 --> B2
+    B6 --> B1
+    
+    %% Styling
+    classDef user fill:#87CEEB
+    classDef portal fill:#90EE90
+    classDef backend fill:#FFD700
+    classDef external fill:#DDA0DD
+    classDef legacy fill:#FFB6C1
+    classDef stakeholder fill:#F0E68C
+    
+    class U1,U2,U3,U4,U5 user
+    class P1,P2,P3,P4,P5,P6,P7,P8 portal
+    class B1,B2,B3,B4,B5,B6,B7,B8 backend
+    class E1,E2,E3,E4,E5,E6 external
+    class L1,L2,L3,L4 legacy
+    class S1,S2,S3,S4 stakeholder
+    
+    %% Notes
+    note1[["VERIFIED: User groups, service families"]]
+    note2[["INFERRED: Backend architecture, integrations"]]
+    note3[["UNKNOWN: Legacy system status, data migration"]]
+    note4[["VALIDATION REQUIRED: Technical architecture, APIs, data flows"]]

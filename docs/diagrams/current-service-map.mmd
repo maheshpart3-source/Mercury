@@ -1,0 +1,88 @@
+%% MCA Services - Current Service Organization
+%% Status: INFERRED from service catalogue
+%% Evidence: Service catalogue + 2021 training materials
+
+graph TB
+    MCA[MCA Services Portal]
+    
+    %% Service Families
+    MCA --> COMPANY[Company Services<br/>~25 services]
+    MCA --> LLP[LLP Services<br/>~10 services]
+    MCA --> DIN[DIN/Director Services<br/>~5 services]
+    MCA --> DSC[DSC Services<br/>~3 services]
+    MCA --> FILING[E-Filing Services<br/>~3 services]
+    MCA --> MASTER[Master Data Services<br/>~5 services]
+    MCA --> DOC[Document Services<br/>~4 services]
+    MCA --> PAY[Fee & Payment<br/>~4 services]
+    MCA --> COMPLAINT[Complaints<br/>~3 services]
+    MCA --> INVESTOR[Investor Services<br/>~3 services]
+    MCA --> TRACK[Track Status<br/>~2 services]
+    MCA --> DATA[Data & Reports<br/>~3 services]
+    MCA --> SPEC[Specialized<br/>~10 services]
+    
+    %% Company Services breakdown
+    COMPANY --> C1[Register Company<br/>SPICe+]
+    COMPANY --> C2[Name Reservation]
+    COMPANY --> C3[Director Changes]
+    COMPANY --> C4[Annual Compliance<br/>AOC-4, MGT-7]
+    COMPANY --> C5[Charge Registration<br/>CHG-1]
+    COMPANY --> C6[Company Closure<br/>STK-2]
+    COMPANY --> C7[Share Capital]
+    COMPANY --> C8[Company Changes]
+    
+    %% LLP Services breakdown
+    LLP --> L1[Register LLP<br/>FiLLiP]
+    LLP --> L2[LLP Name Reservation]
+    LLP --> L3[Partner Changes]
+    LLP --> L4[LLP Annual<br/>Form 8, Form 11]
+    LLP --> L5[LLP Closure]
+    
+    %% DIN Services breakdown
+    DIN --> D1[Apply for DIN<br/>DIR-3]
+    DIN --> D2[DIR-3 KYC<br/>Annual]
+    DIN --> D3[Update DIN<br/>DIR-6]
+    DIN --> D4[Director Search]
+    
+    %% Master Data breakdown
+    MASTER --> M1[View Company<br/>Master Data]
+    MASTER --> M2[View LLP<br/>Master Data]
+    MASTER --> M3[View Director<br/>Master Data]
+    MASTER --> M4[Charges Register]
+    
+    %% Document Services
+    DOC --> DOC1[View Public<br/>Documents]
+    DOC --> DOC2[Certified<br/>Copies]
+    DOC --> DOC3[Download<br/>Certificates]
+    
+    %% Payment Services
+    PAY --> P1[Fee Enquiry]
+    PAY --> P2[Pay Fees]
+    PAY --> P3[Track Payment]
+    
+    %% Track Services
+    TRACK --> T1[Track by SRN]
+    TRACK --> T2[Filing History]
+    
+    %% Investor Services
+    INVESTOR --> I1[IEPF Services]
+    INVESTOR --> I2[Unclaimed<br/>Amounts]
+    INVESTOR --> I3[File IEPF-5<br/>Claim]
+    
+    %% Specialized Services
+    SPEC --> SP1[e-Adjudication]
+    SPEC --> SP2[e-Consultation]
+    SPEC --> SP3[e-Books]
+    SPEC --> SP4[LMS]
+    SPEC --> SP5[Independent<br/>Director Databank]
+    SPEC --> SP6[E-Auction]
+    
+    %% Styling
+    classDef family fill:#4682B4,color:#fff
+    classDef verified fill:#90EE90
+    classDef inferred fill:#FFE4B5
+    classDef unknown fill:#FFB6C1
+    
+    class MCA,COMPANY,LLP,DIN,DSC,FILING,MASTER,DOC,PAY,COMPLAINT,INVESTOR,TRACK,DATA,SPEC family
+    class C1,C4,C6,L1,L4,D1,D2,M1,M2,M3,DOC1,P1,T1,I3 verified
+    class C2,C3,C5,C7,C8,L2,L3,L5,D3,D4,M4,DOC2,DOC3,P2,P3,T2,I1,I2 inferred
+    class SP1,SP2,SP3,SP4,SP5,SP6 inferred
