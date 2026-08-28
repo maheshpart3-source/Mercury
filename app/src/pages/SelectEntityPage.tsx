@@ -117,6 +117,7 @@ export function SelectEntityPage() {
           </Button>
         </div>
       </div>
+      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration — entities shown are simulated.</p>
     </div>
   );
 }

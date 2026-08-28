@@ -154,6 +154,7 @@ export function ServicesPage() {
           </div>
         </div>
       ))}
+      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration — only Incorporation (SPICe+) is fully functional.</p>
     </div>
   );
 }

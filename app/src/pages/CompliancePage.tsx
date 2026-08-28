@@ -99,6 +99,7 @@ export function CompliancePage() {
           <EmptyState icon={CheckCircle2} title="All Clear" description="No pending obligations for this entity." />
         )}
       </Card>
+      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration — compliance data shown is simulated.</p>
     </div>
   );
 }

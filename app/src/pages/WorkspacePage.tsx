@@ -250,6 +250,7 @@ export function WorkspacePage() {
           </div>
         </Card>
       </div>
+      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration — data shown is simulated.</p>
     </div>
   );
 }

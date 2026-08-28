@@ -322,6 +322,7 @@ export function EntityProfilePage() {
           </div>
         </Card>
       )}
+      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration — entity data shown is simulated.</p>
     </div>
   );
 }

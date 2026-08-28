@@ -1,5 +1,5 @@
 import {
-  createContext, useContext, useState, useCallback, useMemo, useEffect,
+  createContext, useContext, useState, useCallback, useMemo, useEffect, useRef,
   type ReactNode,
 } from 'react';
 import type { Entity, EntityRelationship, Authority } from '@/types';
@@ -26,21 +26,30 @@ interface EntityContextValue {
 
 const EntityContext = createContext<EntityContextValue | undefined>(undefined);
 
+function getStoredEntityId(): string | null {
+  try { return sessionStorage.getItem('mca_entity_id'); } catch { return null; }
+}
+
 export function EntityProvider({ children }: { children: ReactNode }) {
   const { person } = useAuth();
 
-  const [activeEntityId, setActiveEntityId] = useState<string | null>(null);
+  const [activeEntityId, setActiveEntityId] = useState<string | null>(getStoredEntityId);
   const [hasInProgressWork, setHasInProgressWork] = useState(false);
+  const prevPersonId = useRef(person?.id);
 
   const availableEntities = useMemo<AvailableEntity[]>(() => {
     if (!person) return [];
     return getAvailableEntitiesForPerson(person.id);
   }, [person]);
 
-  // Clear entity context on person change (Rule EC-11)
+  // Clear entity context on person change (Rule EC-11) — skip initial mount
   useEffect(() => {
-    setActiveEntityId(null);
-    setHasInProgressWork(false);
+    if (prevPersonId.current !== person?.id) {
+      prevPersonId.current = person?.id;
+      setActiveEntityId(null);
+      setHasInProgressWork(false);
+      try { sessionStorage.removeItem('mca_entity_id'); } catch {}
+    }
   }, [person?.id]);
 
   const active = useMemo(() => {
@@ -52,10 +61,12 @@ export function EntityProvider({ children }: { children: ReactNode }) {
     const target = getEntityById(entityId);
     if (!target || target.status === 'STRUCK_OFF') return;
     setActiveEntityId(entityId);
+    try { sessionStorage.setItem('mca_entity_id', entityId); } catch {}
   }, []);
 
   const clearEntity = useCallback(() => {
     setActiveEntityId(null);
+    try { sessionStorage.removeItem('mca_entity_id'); } catch {}
   }, []);
 
   const canPerformAction = useCallback((action: string): boolean => {
