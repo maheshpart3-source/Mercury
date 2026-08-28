@@ -31,7 +31,7 @@ export function Modal({ isOpen, onClose, title, children, size = 'md' }: ModalPr
     <dialog
       ref={dialogRef}
       onClose={onClose}
-      className={`${sizeStyles[size]} w-full rounded-xl border border-surface-200 bg-white p-0 shadow-xl backdrop:bg-black/40 backdrop:backdrop-blur-sm`}
+      className={`${sizeStyles[size]} w-full rounded-lg border border-surface-200 bg-white p-0 shadow-xl backdrop:bg-black/40 backdrop:backdrop-blur-sm`}
       onClick={(e) => { if (e.target === dialogRef.current) onClose(); }}
     >
       <div className="flex items-center justify-between border-b border-surface-200 px-6 py-4">

@@ -37,7 +37,7 @@ export function WorkspacePage() {
   const overdue = obligations.filter(o => o.status === 'OVERDUE');
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in">
       {/* Entity Header */}
       <div className="flex items-start justify-between">
         <div>
@@ -48,8 +48,8 @@ export function WorkspacePage() {
               label={activeEntity.status}
             />
           </div>
-          <div className="mt-1.5 flex items-center gap-3 text-sm text-surface-500">
-            <span>{getEntityIdentifier(activeEntity)}</span>
+          <div className="mt-1.5 flex items-center gap-2 text-sm text-surface-500">
+            <span className="font-mono text-xs">{getEntityIdentifier(activeEntity)}</span>
             <span className="text-surface-300">·</span>
             <span>{getEntityTypeLabel(activeEntity)}</span>
             <span className="text-surface-300">·</span>
@@ -66,15 +66,15 @@ export function WorkspacePage() {
 
       {/* Attention Required */}
       {pending.length > 0 && (
-        <Card padding="lg" className={overdue.length > 0 ? 'border-danger-200 bg-danger-50/30' : 'border-warn-100 bg-warn-50/30'}>
+        <div className={`rounded-lg border p-5 ${overdue.length > 0 ? 'border-danger-200 bg-danger-50/40' : 'border-warn-100 bg-warn-50/40'}`}>
           <div className="flex items-center gap-2 mb-4">
-            <AlertTriangle className={`h-5 w-5 ${overdue.length > 0 ? 'text-danger-500' : 'text-warn-500'}`} />
-            <CardTitle>Needs Your Attention</CardTitle>
+            <AlertTriangle className={`h-4.5 w-4.5 ${overdue.length > 0 ? 'text-danger-500' : 'text-warn-500'}`} />
+            <h2 className="text-sm font-semibold text-surface-900">Needs Your Attention</h2>
             <Badge variant={overdue.length > 0 ? 'danger' : 'warning'}>
               {pending.length} item{pending.length !== 1 ? 's' : ''}
             </Badge>
           </div>
-          <div className="space-y-3">
+          <div className="space-y-2">
             {pending.map(obl => {
               const due = new Date(obl.dueDate);
               const now = new Date();
@@ -87,7 +87,7 @@ export function WorkspacePage() {
                   className="flex items-center justify-between rounded-lg bg-white border border-surface-200 px-4 py-3"
                 >
                   <div className="flex items-center gap-3">
-                    <div className={`flex h-9 w-9 items-center justify-center rounded-lg ${isOverdue ? 'bg-danger-100' : 'bg-warn-100'}`}>
+                    <div className={`flex h-8 w-8 items-center justify-center rounded-lg ${isOverdue ? 'bg-danger-100' : 'bg-warn-100'}`}>
                       <FileCheck className={`h-4 w-4 ${isOverdue ? 'text-danger-600' : 'text-warn-600'}`} />
                     </div>
                     <div>
@@ -117,7 +117,7 @@ export function WorkspacePage() {
               );
             })}
           </div>
-        </Card>
+        </div>
       )}
 
       {/* Stats Row */}
@@ -125,7 +125,7 @@ export function WorkspacePage() {
         {[
           { label: 'Pending Obligations', value: pending.length.toString(), icon: AlertTriangle, color: 'text-warn-500' },
           { label: 'Completed (FY)', value: obligations.filter(o => o.status === 'COMPLETED').length.toString(), icon: CheckCircle2, color: 'text-accent-500' },
-          { label: 'Active Transactions', value: transactions.filter(t => t.state === 'DRAFT' || t.state === 'PROCESSING').length.toString(), icon: Clock, color: 'text-primary-500' },
+          { label: 'Active Transactions', value: transactions.filter(t => t.state === 'DRAFT' || t.state === 'PROCESSING').length.toString(), icon: Clock, color: 'text-primary-600' },
           { label: 'Compliance Score', value: overdue.length === 0 ? 'Good' : 'At Risk', icon: TrendingUp, color: overdue.length === 0 ? 'text-accent-500' : 'text-danger-500' },
         ].map(stat => (
           <Card key={stat.label} padding="md">
@@ -147,13 +147,13 @@ export function WorkspacePage() {
         <div className="flex items-center justify-between mb-4">
           <CardTitle>Recent Activity</CardTitle>
           <button className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">
-            View All <ChevronRight className="h-4 w-4" />
+            View All <ChevronRight className="h-3.5 w-3.5" />
           </button>
         </div>
         {transactions.length === 0 ? (
           <p className="text-sm text-surface-400 py-6 text-center">No recent activity</p>
         ) : (
-          <div className="space-y-2">
+          <div className="space-y-1">
             {transactions.slice(0, 5).map(txn => {
               const stateColors: Record<string, string> = {
                 DRAFT: 'warning',
@@ -164,7 +164,7 @@ export function WorkspacePage() {
                 REJECTED: 'danger',
               };
               return (
-                <div key={txn.id} className="flex items-center justify-between rounded-lg border border-surface-100 px-4 py-3 hover:bg-surface-50 transition-colors">
+                <div key={txn.id} className="flex items-center justify-between rounded-lg px-4 py-3 hover:bg-surface-50 transition-colors">
                   <div className="flex items-center gap-3">
                     <FileText className="h-4 w-4 text-surface-400" />
                     <div>
@@ -172,7 +172,7 @@ export function WorkspacePage() {
                         {txn.description}
                         <span className="ml-1.5 text-surface-400">({txn.formNumber})</span>
                       </p>
-                      {txn.srn && <p className="text-xs text-surface-400 mt-0.5">{txn.srn}</p>}
+                      {txn.srn && <p className="text-xs text-surface-400 mt-0.5 font-mono">{txn.srn}</p>}
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -204,8 +204,8 @@ export function WorkspacePage() {
               ...(activeEntity.authorizedCapital ? [['Authorised Capital', `₹ ${activeEntity.authorizedCapital}`]] : []),
               ...(activeEntity.paidUpCapital ? [['Paid-up Capital', `₹ ${activeEntity.paidUpCapital}`]] : []),
             ].map(([label, value]) => (
-              <div key={label as string} className="flex justify-between">
-                <dt className="text-surface-500">{label}</dt>
+              <div key={label as string} className="flex justify-between gap-4">
+                <dt className="text-surface-500 shrink-0">{label}</dt>
                 <dd className="font-medium text-surface-900 text-right">{value}</dd>
               </div>
             ))}
@@ -237,8 +237,8 @@ export function WorkspacePage() {
             </div>
           </dl>
           <div className="mt-4 pt-4 border-t border-surface-100">
-            <p className="text-xs text-surface-400">Permitted actions for this entity:</p>
-            <div className="mt-2 flex flex-wrap gap-1">
+            <p className="text-xs text-surface-400 mb-2">Permitted actions</p>
+            <div className="flex flex-wrap gap-1">
               {canPerformAction('FILE_ANNUAL_RETURN') && <Badge>File Returns</Badge>}
               {canPerformAction('FILE_FINANCIAL_STATEMENTS') && <Badge>File Financials</Badge>}
               {canPerformAction('APPOINT_DIRECTOR') && <Badge>Appoint Directors</Badge>}

@@ -48,7 +48,7 @@ export function SelectEntityPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search entities by name, CIN, or LLPIN..."
-              className="w-full rounded-xl border border-surface-200 bg-white py-3 pl-12 pr-4 text-sm shadow-sm focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-100"
+              className="w-full rounded-lg border border-surface-200 bg-white py-3 pl-12 pr-4 text-sm shadow-sm focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-100"
               autoFocus
             />
           </div>
@@ -65,9 +65,9 @@ export function SelectEntityPage() {
               <button
                 key={entity.id}
                 onClick={() => handleSelect(entity.id)}
-                className="group flex w-full items-start gap-4 rounded-xl border border-surface-200 bg-white p-5 text-left shadow-sm transition-all hover:border-primary-300 hover:shadow-md"
+                className="group flex w-full items-start gap-4 rounded-lg border border-surface-200 bg-white p-5 text-left shadow-sm transition-all hover:border-primary-300 hover:shadow-md"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-700 font-bold text-lg">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-50 text-primary-700 font-bold text-lg">
                   {entity.name.charAt(0)}
                 </div>
                 <div className="min-w-0 flex-1">

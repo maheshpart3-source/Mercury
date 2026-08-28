@@ -68,7 +68,7 @@ export function Header() {
           </button>
 
           {showProfile && (
-            <div className="absolute right-0 top-full z-50 mt-1 w-56 rounded-xl border border-surface-200 bg-white py-1 shadow-xl">
+            <div className="absolute right-0 top-full z-50 mt-1 w-56 rounded-lg border border-surface-200 bg-white py-1 shadow-xl">
               <div className="px-4 py-3 border-b border-surface-100">
                 <p className="text-sm font-medium text-surface-900">{person?.name}</p>
                 <p className="text-xs text-surface-500 mt-0.5">{person?.email}</p>

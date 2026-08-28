@@ -88,10 +88,10 @@ export function ServicesPage() {
   const categories = [...new Set(filtered.map(s => s.category))];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in">
       <div>
         <div className="flex items-center gap-2 mb-1">
-          <Briefcase className="h-5 w-5 text-primary-500" />
+          <Briefcase className="h-5 w-5 text-primary-600" />
           <h1 className="text-xl font-bold text-surface-900">Services</h1>
         </div>
         <p className="text-sm text-surface-500">
@@ -110,7 +110,7 @@ export function ServicesPage() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="What do you want to do? e.g., &quot;start a company&quot;, &quot;file annual return&quot;..."
-          className="w-full rounded-xl border border-surface-200 bg-white py-3 pl-12 pr-4 text-sm shadow-sm focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-100"
+          className="w-full rounded-lg border border-surface-200 bg-white py-3 pl-12 pr-4 text-sm shadow-sm focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-100"
         />
       </div>
 
@@ -130,7 +130,7 @@ export function ServicesPage() {
                   onClick={() => {
                     if (service.id === 'incorporate-company') navigate('/services/incorporate');
                   }}
-                  className="group flex items-start gap-4 rounded-xl border border-surface-200 bg-white p-4 text-left transition-all hover:border-primary-300 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-surface-200 disabled:hover:shadow-none"
+                  className="group flex items-start gap-4 rounded-lg border border-surface-200 bg-white p-4 text-left transition-all hover:border-primary-300 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-surface-200 disabled:hover:shadow-none"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary-50 text-primary-600">
                     <service.icon className="h-5 w-5" />
@@ -138,7 +138,7 @@ export function ServicesPage() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
                       <p className="font-medium text-surface-900 group-hover:text-primary-700">{service.intent}</p>
-                      {!disabled && <ArrowRight className="h-4 w-4 text-surface-300 group-hover:text-primary-500 shrink-0" />}
+                      {!disabled && <ArrowRight className="h-4 w-4 text-surface-300 group-hover:text-primary-600 shrink-0" />}
                     </div>
                     <p className="text-xs text-surface-500 mt-1">{service.description}</p>
                     {needsEntity && (

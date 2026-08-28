@@ -31,7 +31,7 @@ export function RegistryPage() {
     <div className="space-y-6">
       <div>
         <div className="flex items-center gap-2 mb-1">
-          <Globe className="h-5 w-5 text-primary-500" />
+          <Globe className="h-5 w-5 text-primary-600" />
           <h1 className="text-xl font-bold text-surface-900">Public Registry</h1>
         </div>
         <p className="text-sm text-surface-500">
@@ -52,12 +52,12 @@ export function RegistryPage() {
             onChange={(e) => setSearch(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
             placeholder="Search by company name, CIN, or LLPIN..."
-            className="w-full rounded-xl border border-surface-200 bg-white py-3 pl-12 pr-4 text-sm shadow-sm focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-100"
+            className="w-full rounded-lg border border-surface-200 bg-white py-3 pl-12 pr-4 text-sm shadow-sm focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-100"
           />
         </div>
         <button
           onClick={handleSearch}
-          className="rounded-xl bg-primary-500 px-6 py-3 text-sm font-medium text-white shadow-sm hover:bg-primary-600 transition-colors"
+          className="rounded-lg bg-primary-600 px-6 py-3 text-sm font-medium text-white shadow-sm hover:bg-primary-700 transition-colors"
         >
           Search
         </button>
@@ -81,7 +81,7 @@ export function RegistryPage() {
             >
               <div className="flex items-start justify-between">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-surface-100 text-surface-600 font-bold">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-surface-100 text-surface-600 font-bold">
                     {entity.name.charAt(0)}
                   </div>
                   <div>

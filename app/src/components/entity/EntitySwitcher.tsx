@@ -75,7 +75,7 @@ export function EntitySwitcher() {
             isOpen && 'border-surface-300 bg-white shadow-sm',
           )}
         >
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary-500 text-white">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary-700 text-white">
             <Building2 className="h-4 w-4" />
           </div>
           <div className="min-w-0 max-w-[200px]">
@@ -97,7 +97,7 @@ export function EntitySwitcher() {
         </button>
 
         {isOpen && (
-          <div className="absolute left-0 top-full z-50 mt-1 w-[360px] rounded-xl border border-surface-200 bg-white shadow-xl">
+          <div className="absolute left-0 top-full z-50 mt-1 w-[360px] rounded-lg border border-surface-200 bg-white shadow-xl">
             {availableEntities.length > 3 && (
               <div className="border-b border-surface-100 p-3">
                 <div className="relative">
@@ -136,14 +136,14 @@ export function EntitySwitcher() {
                   >
                     <div className={clsx(
                       'mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-medium',
-                      isActive ? 'bg-primary-500 text-white' : 'bg-surface-100 text-surface-600',
+                      isActive ? 'bg-primary-600 text-white' : 'bg-surface-100 text-surface-600',
                     )}>
                       {entity.name.charAt(0)}
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
                         <p className="truncate text-sm font-medium text-surface-900">{entity.name}</p>
-                        {isActive && <Check className="h-4 w-4 shrink-0 text-primary-500" />}
+                        {isActive && <Check className="h-4 w-4 shrink-0 text-primary-600" />}
                       </div>
                       <p className="text-xs text-surface-500 mt-0.5">
                         {getEntityIdentifier(entity)}

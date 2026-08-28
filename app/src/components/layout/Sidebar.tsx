@@ -51,20 +51,20 @@ export function Sidebar() {
 
   return (
     <aside className="flex w-56 shrink-0 flex-col border-r border-surface-200 bg-white">
-      <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-4">
+      <nav className="flex-1 space-y-0.5 overflow-y-auto px-3 py-4">
         {activeEntity && (
           <>
-            <p className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-surface-400">
+            <p className="mb-1.5 px-3 text-[11px] font-semibold uppercase tracking-wider text-surface-400">
               Entity Workspace
             </p>
             {entityNavItems.map(item => (
               <SidebarLink key={item.to} item={item} />
             ))}
-            <div className="my-4 h-px bg-surface-100" />
+            <div className="my-3 h-px bg-surface-100" />
           </>
         )}
 
-        <p className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-surface-400">
+        <p className="mb-1.5 px-3 text-[11px] font-semibold uppercase tracking-wider text-surface-400">
           Platform
         </p>
         {globalNavItems.map(item => (
@@ -73,10 +73,10 @@ export function Sidebar() {
 
         {activeEntity && (
           <>
-            <div className="my-4 h-px bg-surface-100" />
+            <div className="my-3 h-px bg-surface-100" />
             <NavLink
               to="/services"
-              className="flex items-center gap-2 rounded-lg border border-dashed border-surface-300 px-3 py-2.5 text-sm font-medium text-surface-500 hover:border-primary-400 hover:bg-primary-50 hover:text-primary-700 transition-colors"
+              className="flex items-center gap-2 rounded-lg border border-dashed border-surface-300 px-3 py-2 text-sm font-medium text-surface-500 hover:border-primary-400 hover:bg-primary-50 hover:text-primary-700 transition-colors"
             >
               <Plus className="h-4 w-4" />
               New Service

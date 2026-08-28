@@ -213,7 +213,7 @@ export function IncorporationPage() {
                   }`}
                 >
                   <div className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 ${
-                    form.companyType === ct.value ? 'border-primary-500 bg-primary-500' : 'border-surface-300'
+                    form.companyType === ct.value ? 'border-primary-600 bg-primary-600' : 'border-surface-300'
                   }`}>
                     {form.companyType === ct.value && <Check className="h-3 w-3 text-white" />}
                   </div>
@@ -658,7 +658,7 @@ export function IncorporationPage() {
                   }`}
                 >
                   <div className={`flex h-4 w-4 items-center justify-center rounded-full border-2 ${
-                    form.paymentMethod === pm.value ? 'border-primary-500 bg-primary-500' : 'border-surface-300'
+                    form.paymentMethod === pm.value ? 'border-primary-600 bg-primary-600' : 'border-surface-300'
                   }`}>
                     {form.paymentMethod === pm.value && <div className="h-1.5 w-1.5 rounded-full bg-white" />}
                   </div>

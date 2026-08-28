@@ -96,7 +96,7 @@ export function EntityProfilePage() {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in">
       <div className="flex items-center gap-3">
         <button
           onClick={() => navigate('/registry')}
@@ -133,7 +133,7 @@ export function EntityProfilePage() {
             onClick={() => setActiveTab(tab.key)}
             className={`px-4 py-2.5 text-sm font-medium border-b-2 transition-colors ${
               activeTab === tab.key
-                ? 'border-primary-500 text-primary-700'
+                ? 'border-primary-600 text-primary-700'
                 : 'border-transparent text-surface-500 hover:text-surface-700 hover:border-surface-300'
             }`}
           >

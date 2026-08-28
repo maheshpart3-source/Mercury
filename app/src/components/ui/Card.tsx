@@ -11,7 +11,7 @@ const padStyles = { sm: 'p-3', md: 'p-5', lg: 'p-6' };
 export function Card({ children, padding = 'md', className, ...props }: CardProps) {
   return (
     <div
-      className={clsx('bg-white rounded-xl border border-surface-200 shadow-sm', padStyles[padding], className)}
+      className={clsx('bg-white rounded-lg border border-surface-200 shadow-sm', padStyles[padding], className)}
       {...props}
     >
       {children}

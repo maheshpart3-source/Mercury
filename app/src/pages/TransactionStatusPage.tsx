@@ -65,7 +65,7 @@ export function TransactionStatusPage() {
   const completedCount = steps.filter(s => s.status === 'completed').length;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in">
       <div className="flex items-center gap-3">
         <button
           onClick={() => navigate(-1)}
@@ -108,10 +108,10 @@ export function TransactionStatusPage() {
                     <CheckCircle2 className="h-6 w-6 text-accent-500 shrink-0" />
                   ) : step.status === 'current' ? (
                     <div className="relative">
-                      <Clock className="h-6 w-6 text-primary-500 shrink-0" />
+                      <Clock className="h-6 w-6 text-primary-600 shrink-0" />
                       <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75" />
-                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary-500" />
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-500 opacity-75" />
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary-600" />
                       </span>
                     </div>
                   ) : (
@@ -136,7 +136,7 @@ export function TransactionStatusPage() {
                   {step.status === 'current' && (
                     <div className="mt-2 flex items-center gap-1.5">
                       <RefreshCw className="h-3 w-3 text-primary-400 animate-spin" style={{ animationDuration: '3s' }} />
-                      <span className="text-xs text-primary-500">In progress</span>
+                      <span className="text-xs text-primary-600">In progress</span>
                     </div>
                   )}
                 </div>
