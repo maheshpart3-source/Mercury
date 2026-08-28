@@ -9,12 +9,12 @@ interface StatusIndicatorProps {
 }
 
 const dotColor: Record<Status, string> = {
-  active: 'bg-green-500',
-  completed: 'bg-green-500',
+  active: 'bg-accent-500',
+  completed: 'bg-accent-500',
   inactive: 'bg-surface-400',
-  warning: 'bg-amber-500',
-  error: 'bg-red-500',
-  pending: 'bg-blue-500',
+  warning: 'bg-warn-500',
+  error: 'bg-danger-500',
+  pending: 'bg-primary-600',
 };
 
 export function StatusIndicator({ status, label, className }: StatusIndicatorProps) {

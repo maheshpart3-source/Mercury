@@ -32,7 +32,7 @@ export function LoginPage() {
       </div>
 
       <div className="w-full max-w-md">
-        <div className="rounded-xl bg-white p-6 shadow-2xl animate-fade-in">
+        <div className="rounded-lg bg-white p-6 shadow-2xl animate-fade-in">
           <h2 className="text-base font-semibold text-surface-900 mb-1">Sign In</h2>
           <p className="text-sm text-surface-500 mb-6">Select a persona to explore the platform</p>
 

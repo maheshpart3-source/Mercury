@@ -180,7 +180,7 @@ export function EntitySwitcher() {
         size="sm"
       >
         <div className="space-y-4">
-          <div className="rounded-lg bg-warn-50 border border-amber-200 p-3">
+          <div className="rounded-lg bg-warn-50 border border-warn-200 p-3">
             <p className="text-sm text-surface-700">
               You have unsaved work for <span className="font-semibold">{activeEntity?.name}</span>.
               Switching entities will leave this draft open. You can return to it later.

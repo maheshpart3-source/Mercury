@@ -206,7 +206,7 @@ export function IncorporationPage() {
                 <button
                   key={ct.value}
                   onClick={() => updateForm('companyType', ct.value)}
-                  className={`w-full flex items-start gap-4 rounded-xl border-2 p-4 text-left transition-all ${
+                  className={`w-full flex items-start gap-4 rounded-lg border-2 p-4 text-left transition-all ${
                     form.companyType === ct.value
                       ? 'border-primary-600 bg-primary-50/50'
                       : 'border-surface-200 hover:border-surface-300'
@@ -585,7 +585,7 @@ export function IncorporationPage() {
             <Alert variant="info">
               In the production platform, this step would invoke the Digital Signature Certificate (DSC) signing workflow. For this prototype, confirm the signing intent below.
             </Alert>
-            <div className="rounded-xl border-2 border-dashed border-surface-300 p-8 text-center">
+            <div className="rounded-lg border-2 border-dashed border-surface-300 p-8 text-center">
               <PenTool className="h-10 w-10 text-surface-300 mx-auto mb-3" />
               <p className="text-sm text-surface-600 mb-4">
                 All directors and subscribers must sign the incorporation documents using their registered DSC.

@@ -25,7 +25,7 @@ export function HomePage() {
   return (
     <div className="space-y-8 animate-fade-in">
       {/* Hero — restrained institutional header */}
-      <div className="rounded-xl border border-surface-200 bg-white p-8">
+      <div className="rounded-lg border border-surface-200 bg-white p-8">
         <div className="flex items-start justify-between">
           <div>
             <p className="text-xs font-medium uppercase tracking-wider text-surface-400">Ministry of Corporate Affairs</p>

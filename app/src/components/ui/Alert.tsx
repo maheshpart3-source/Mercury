@@ -13,9 +13,9 @@ interface AlertProps {
 
 const config: Record<Variant, { bg: string; border: string; icon: typeof Info }> = {
   info: { bg: 'bg-primary-50', border: 'border-primary-200', icon: Info },
-  success: { bg: 'bg-accent-50', border: 'border-green-200', icon: CheckCircle },
-  warning: { bg: 'bg-warn-50', border: 'border-amber-200', icon: AlertTriangle },
-  error: { bg: 'bg-danger-50', border: 'border-red-200', icon: XCircle },
+  success: { bg: 'bg-accent-50', border: 'border-accent-200', icon: CheckCircle },
+  warning: { bg: 'bg-warn-50', border: 'border-warn-200', icon: AlertTriangle },
+  error: { bg: 'bg-danger-50', border: 'border-danger-200', icon: XCircle },
 };
 
 export function Alert({ variant = 'info', title, children, className }: AlertProps) {
