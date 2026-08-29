@@ -18,7 +18,9 @@ export function LoginPage() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-primary-600 px-4">
       <div className="mb-10 text-center">
         <div className="mb-5 flex justify-center">
-          <img src="/mca-logo.svg" alt="Ministry of Corporate Affairs" className="h-14 brightness-0 invert" />
+          <div className="rounded-lg bg-white px-6 py-3">
+            <img src="/mca-logo.svg" alt="Ministry of Corporate Affairs" className="h-12" />
+          </div>
         </div>
         <p className="text-sm text-primary-200 max-w-sm">
           Entity-centric regulatory operating platform

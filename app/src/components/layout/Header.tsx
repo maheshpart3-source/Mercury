@@ -18,9 +18,14 @@ export function Header() {
     <header className="flex h-16 items-center justify-between border-b border-surface-200 bg-white px-4">
       {/* Left: Logo + Entity Switcher */}
       <div className="flex items-center gap-4">
-        <div className="flex items-center gap-2.5">
-          <img src="/mca-logo.svg" alt="MCA" className="h-8 hidden sm:block" />
-          <img src="/mca-logo.svg" alt="MCA" className="h-7 sm:hidden w-auto max-w-[140px]" />
+        <div className="flex items-center gap-2">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary-600 text-white text-xs font-bold leading-none">
+            MCA
+          </div>
+          <div className="hidden sm:block leading-tight">
+            <p className="text-sm font-semibold text-primary-700">Ministry of Corporate Affairs</p>
+            <p className="text-[10px] text-surface-400">Government of India</p>
+          </div>
         </div>
 
         <div className="h-8 w-px bg-surface-200" />
