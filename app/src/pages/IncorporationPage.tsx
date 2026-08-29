@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   Building2, CheckCircle2, ArrowRight, ArrowLeft,
   FileText, Upload, CreditCard, PenTool, AlertTriangle,
-  ChevronDown, Info, Check, X,
+  Info, Check,
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useEntityContext } from '@/contexts/EntityContext';

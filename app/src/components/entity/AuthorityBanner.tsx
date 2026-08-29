@@ -1,4 +1,4 @@
-import { Shield, ShieldAlert, ShieldCheck } from 'lucide-react';
+import { ShieldAlert, ShieldCheck } from 'lucide-react';
 import { useEntityContext } from '@/contexts/EntityContext';
 import { useAuth } from '@/contexts/AuthContext';
 import { getRoleLabel, getEntityIdentifier } from '@/data/mock';

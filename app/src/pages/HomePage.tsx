@@ -6,9 +6,7 @@ import {
 import { useAuth } from '@/contexts/AuthContext';
 import { useEntityContext } from '@/contexts/EntityContext';
 import { getObligationsForEntity } from '@/data/mock';
-import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
 
 export function HomePage() {
   const navigate = useNavigate();

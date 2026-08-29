@@ -1,7 +1,7 @@
 import { FileCheck, Calendar, CheckCircle2, AlertTriangle, Clock } from 'lucide-react';
 import { useEntityContext } from '@/contexts/EntityContext';
 import { getObligationsForEntity } from '@/data/mock';
-import { Card, CardTitle } from '@/components/ui/Card';
+import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { EmptyState } from '@/components/ui/EmptyState';
 import { Building2 } from 'lucide-react';

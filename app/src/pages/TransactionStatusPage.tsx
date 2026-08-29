@@ -1,14 +1,13 @@
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
-  CheckCircle2, Clock, Circle, ArrowLeft, FileText,
-  Download, MessageSquare, ChevronRight, Building2,
+  CheckCircle2, Clock, Circle, ArrowLeft,
+  Download, MessageSquare,
   RefreshCw,
 } from 'lucide-react';
 import { useEntityContext } from '@/contexts/EntityContext';
 import { getTransactionsForEntity } from '@/data/mock';
 import { Card, CardTitle } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
 import { Alert } from '@/components/ui/Alert';
 
 interface StatusStep {
@@ -62,8 +61,6 @@ export function TransactionStatusPage() {
   }
 
   const currentStepLabel = steps.find(s => s.status === 'current')?.label || 'Processing';
-  const completedCount = steps.filter(s => s.status === 'completed').length;
-
   return (
     <div className="space-y-6 animate-fade-in">
       <div className="flex items-center gap-3">

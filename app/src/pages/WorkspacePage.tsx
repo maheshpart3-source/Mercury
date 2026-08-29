@@ -1,11 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import {
-  Building2, Calendar, FileCheck, Clock, ArrowRight,
+  Building2, FileCheck, Clock, ArrowRight,
   AlertTriangle, CheckCircle2, FileText, TrendingUp,
   ChevronRight,
 } from 'lucide-react';
 import { useEntityContext } from '@/contexts/EntityContext';
-import { useAuth } from '@/contexts/AuthContext';
 import {
   getObligationsForEntity, getTransactionsForEntity,
   getEntityIdentifier, getEntityTypeLabel, getRoleLabel,

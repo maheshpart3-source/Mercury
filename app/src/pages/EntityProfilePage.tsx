@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import {
-  ArrowLeft, Building2, Users, FileText, Link2,
-  Calendar, MapPin, ChevronRight, ExternalLink,
+  ArrowLeft, Building2, FileText, Link2,
+  MapPin, ChevronRight,
 } from 'lucide-react';
 import { getEntityById, getEntityIdentifier, getEntityTypeLabel } from '@/data/mock';
 import { Card, CardTitle } from '@/components/ui/Card';

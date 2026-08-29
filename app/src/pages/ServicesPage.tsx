@@ -5,7 +5,6 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import { useEntityContext } from '@/contexts/EntityContext';
-import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Alert } from '@/components/ui/Alert';
 

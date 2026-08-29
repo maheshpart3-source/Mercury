@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Building2, Search, Globe, ArrowRight, AlertTriangle } from 'lucide-react';
+import { Search, Globe, ArrowRight, AlertTriangle } from 'lucide-react';
 import { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useEntityContext } from '@/contexts/EntityContext';
