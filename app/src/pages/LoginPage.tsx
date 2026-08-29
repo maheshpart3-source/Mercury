@@ -16,10 +16,10 @@ export function LoginPage() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-primary-600 px-4">
-      <div className="mb-10 text-center">
-        <div className="mb-5 flex justify-center">
-          <div className="rounded-lg bg-white px-6 py-3">
-            <img src="/mca-logo.svg" alt="Ministry of Corporate Affairs" className="h-12" />
+      <div className="mb-6 text-center">
+        <div className="mb-3 flex justify-center">
+          <div className="rounded-lg bg-white px-5 py-2.5">
+            <img src="/mca-logo.svg" alt="Ministry of Corporate Affairs" className="h-10" />
           </div>
         </div>
         <p className="text-sm text-primary-200 max-w-sm">
@@ -28,9 +28,9 @@ export function LoginPage() {
       </div>
 
       <div className="w-full max-w-md">
-        <div className="rounded-lg bg-white p-6 shadow-2xl animate-fade-in">
+        <div className="rounded-lg bg-white p-5 shadow-2xl animate-fade-in">
           <h2 className="text-base font-semibold text-surface-900 mb-1">Sign In</h2>
-          <p className="text-sm text-surface-500 mb-6">Select a persona to explore the platform</p>
+          <p className="text-sm text-surface-500 mb-4">Select a persona to explore the platform</p>
 
           <div className="space-y-3">
             {persons.map(person => {
@@ -69,7 +69,7 @@ export function LoginPage() {
             })}
           </div>
 
-          <div className="mt-6 rounded-lg bg-surface-50 border border-surface-100 p-3">
+          <div className="mt-4 rounded-lg bg-surface-50 border border-surface-100 p-3">
             <p className="text-xs text-surface-500 text-center">
               <span className="font-medium text-surface-600">Prototype Mode</span> - These personas demonstrate different authority contexts. In production, authentication uses Aadhaar-based eKYC and Digital Signature Certificates.
             </p>
@@ -77,7 +77,7 @@ export function LoginPage() {
         </div>
       </div>
 
-      <p className="mt-8 text-xs text-primary-300">
+      <p className="mt-5 text-xs text-primary-300">
         MCA Digital Platform - Future State Prototype
       </p>
     </div>

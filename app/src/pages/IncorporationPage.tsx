@@ -150,7 +150,7 @@ export function IncorporationPage() {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       <div className="flex items-center gap-3">
         <button
           onClick={() => navigate('/services')}
@@ -293,7 +293,7 @@ export function IncorporationPage() {
 
         {/* INFORMATION */}
         {currentStep === 'information' && (
-          <div className="space-y-6">
+          <div className="space-y-5">
             <h2 className="font-semibold text-surface-900">Company Information</h2>
 
             <div className="space-y-4">
@@ -514,7 +514,7 @@ export function IncorporationPage() {
 
         {/* REVIEW */}
         {currentStep === 'review' && (
-          <div className="space-y-6">
+          <div className="space-y-5">
             <h2 className="font-semibold text-surface-900">Review Your Application</h2>
             <Alert variant="warning" title="Please verify all details carefully">
               Incorrect information may lead to rejection and resubmission fees.
@@ -585,7 +585,7 @@ export function IncorporationPage() {
             <Alert variant="info">
               In the production platform, this step would invoke the Digital Signature Certificate (DSC) signing workflow. For this prototype, confirm the signing intent below.
             </Alert>
-            <div className="rounded-lg border-2 border-dashed border-surface-300 p-8 text-center">
+            <div className="rounded-lg border-2 border-dashed border-surface-300 p-6 text-center">
               <PenTool className="h-10 w-10 text-surface-300 mx-auto mb-3" />
               <p className="text-sm text-surface-600 mb-4">
                 All directors and subscribers must sign the incorporation documents using their registered DSC.
@@ -675,7 +675,7 @@ export function IncorporationPage() {
 
         {/* SUBMISSION */}
         {currentStep === 'submission' && (
-          <div className="text-center py-8 space-y-6">
+          <div className="text-center py-8 space-y-5">
             <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent-100">
               <CheckCircle2 className="h-8 w-8 text-accent-600" />
             </div>
@@ -720,7 +720,7 @@ export function IncorporationPage() {
 
         {/* Navigation */}
         {currentStep !== 'submission' && (
-          <div className="flex items-center justify-between mt-8 pt-4 border-t border-surface-200">
+          <div className="flex items-center justify-between mt-5 pt-4 border-t border-surface-200">
             <Button
               variant="ghost"
               onClick={prev}

@@ -36,7 +36,7 @@ export function WorkspacePage() {
   const overdue = obligations.filter(o => o.status === 'OVERDUE');
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-5 animate-fade-in">
       {/* Entity Header */}
       <div className="flex items-start justify-between">
         <div>
@@ -65,8 +65,8 @@ export function WorkspacePage() {
 
       {/* Attention Required */}
       {pending.length > 0 && (
-        <div className={`rounded-lg border p-5 ${overdue.length > 0 ? 'border-danger-200 bg-danger-50/40' : 'border-warn-100 bg-warn-50/40'}`}>
-          <div className="flex items-center gap-2 mb-4">
+        <div className={`rounded-lg border p-4 ${overdue.length > 0 ? 'border-danger-200 bg-danger-50/40' : 'border-warn-100 bg-warn-50/40'}`}>
+          <div className="flex items-center gap-2 mb-3">
             <AlertTriangle className={`h-4.5 w-4.5 ${overdue.length > 0 ? 'text-danger-500' : 'text-warn-500'}`} />
             <h2 className="text-sm font-semibold text-surface-900">Needs Your Attention</h2>
             <Badge variant={overdue.length > 0 ? 'danger' : 'warning'}>
@@ -120,7 +120,7 @@ export function WorkspacePage() {
       )}
 
       {/* Stats Row */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-3">
         {[
           { label: 'Pending Obligations', value: pending.length.toString(), icon: AlertTriangle, color: 'text-warn-500' },
           { label: 'Completed (FY)', value: obligations.filter(o => o.status === 'COMPLETED').length.toString(), icon: CheckCircle2, color: 'text-accent-500' },
@@ -150,7 +150,7 @@ export function WorkspacePage() {
           </button>
         </div>
         {transactions.length === 0 ? (
-          <p className="text-sm text-surface-400 py-6 text-center">No recent activity</p>
+          <p className="text-sm text-surface-400 py-4 text-center">No recent activity</p>
         ) : (
           <div className="space-y-1">
             {transactions.slice(0, 5).map(txn => {
@@ -190,7 +190,7 @@ export function WorkspacePage() {
       </Card>
 
       {/* Entity Details */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-3">
         <Card>
           <CardTitle>Entity Information</CardTitle>
           <dl className="mt-4 space-y-3 text-sm">

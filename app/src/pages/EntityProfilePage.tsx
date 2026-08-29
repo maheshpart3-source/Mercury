@@ -96,7 +96,7 @@ export function EntityProfilePage() {
   ];
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-5 animate-fade-in">
       <div className="flex items-center gap-3">
         <button
           onClick={() => navigate('/registry')}

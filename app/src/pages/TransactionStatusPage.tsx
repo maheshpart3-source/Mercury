@@ -62,7 +62,7 @@ export function TransactionStatusPage() {
 
   const currentStepLabel = steps.find(s => s.status === 'current')?.label || 'Processing';
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-5 animate-fade-in">
       <div className="flex items-center gap-3">
         <button
           onClick={() => navigate(-1)}

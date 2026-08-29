@@ -21,9 +21,9 @@ export function HomePage() {
   const attentionCount = overdueCount + pendingCount;
 
   return (
-    <div className="space-y-8 animate-fade-in">
+    <div className="space-y-5 animate-fade-in">
       {/* Hero - restrained institutional header */}
-      <div className="rounded-lg border border-surface-200 bg-white p-8">
+      <div className="rounded-lg border border-surface-200 bg-white p-5">
         <div className="flex items-start justify-between">
           <div>
             <p className="text-xs font-medium uppercase tracking-wider text-surface-400">Ministry of Corporate Affairs</p>
@@ -44,7 +44,7 @@ export function HomePage() {
           )}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-5">
           {[
             { icon: Plus, label: 'Start Something', desc: 'New company or filing', path: '/services' },
             { icon: Building2, label: 'My Entities', desc: 'Switch or manage', path: '/select-entity' },

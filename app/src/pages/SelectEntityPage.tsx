@@ -27,13 +27,13 @@ export function SelectEntityPage() {
   const hasMany = availableEntities.length > 10;
 
   return (
-    <div className="flex min-h-screen flex-col items-center bg-surface-50 px-4 py-12">
+    <div className="flex min-h-screen flex-col items-center bg-surface-50 px-4 py-8">
       <div className="w-full max-w-2xl">
-        <div className="mb-8 text-center">
+        <div className="mb-5 text-center">
           <h1 className="text-2xl font-bold text-surface-900">
             Welcome, {person?.name}
           </h1>
-          <p className="mt-2 text-surface-500">
+          <p className="mt-1 text-surface-500">
             {hasMany
               ? `You manage ${availableEntities.length} entities. Search or select one to continue.`
               : 'Select an entity to access its workspace.'}
@@ -41,7 +41,7 @@ export function SelectEntityPage() {
         </div>
 
         {showSearch && (
-          <div className="relative mb-6">
+          <div className="relative mb-4">
             <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-surface-400" />
             <input
               type="text"
@@ -65,7 +65,7 @@ export function SelectEntityPage() {
               <button
                 key={entity.id}
                 onClick={() => handleSelect(entity.id)}
-                className="group flex w-full items-start gap-4 rounded-lg border border-surface-200 bg-white p-5 text-left shadow-sm transition-all hover:border-primary-300 hover:shadow-md"
+                className="group flex w-full items-start gap-3 rounded-lg border border-surface-200 bg-white p-4 text-left shadow-sm transition-all hover:border-primary-300 hover:shadow-md"
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-50 text-primary-700 font-bold text-lg">
                   {entity.name.charAt(0)}
@@ -105,12 +105,12 @@ export function SelectEntityPage() {
         </div>
 
         {filtered.length === 0 && search && (
-          <div className="text-center py-12">
+          <div className="text-center py-8">
             <p className="text-surface-500">No entities matching "{search}"</p>
           </div>
         )}
 
-        <div className="mt-8 flex justify-center gap-3">
+        <div className="mt-5 flex justify-center gap-3">
           <Button variant="secondary" onClick={() => navigate('/registry')}>
             <Globe className="h-4 w-4" />
             Browse Public Registry

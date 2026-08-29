@@ -87,7 +87,7 @@ export function ServicesPage() {
   const categories = [...new Set(filtered.map(s => s.category))];
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-5 animate-fade-in">
       <div>
         <div className="flex items-center gap-2 mb-1">
           <Briefcase className="h-5 w-5 text-primary-600" />

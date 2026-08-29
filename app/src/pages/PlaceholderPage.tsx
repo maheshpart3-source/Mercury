@@ -20,7 +20,7 @@ export function PlaceholderPage({ page }: { page: string }) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       <div>
         <h1 className="text-xl font-bold text-surface-900">{config.title}</h1>
         <p className="text-sm text-surface-500 mt-1">{activeEntity.name} - {config.description}</p>

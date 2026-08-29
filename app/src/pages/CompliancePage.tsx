@@ -74,7 +74,7 @@ export function CompliancePage() {
   const actionCount = overdue.length + pending.length;
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-5 animate-fade-in">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-xl font-bold text-surface-900">Compliance Centre</h1>
@@ -89,7 +89,7 @@ export function CompliancePage() {
       </div>
 
       <Card padding="lg">
-        <div className="space-y-6">
+        <div className="space-y-5">
           {renderSection('Overdue', overdue, 'OVERDUE')}
           {renderSection('Pending', pending, 'PENDING')}
           {renderSection('Upcoming', upcoming, 'UPCOMING')}
