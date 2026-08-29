@@ -78,7 +78,7 @@ export function CompliancePage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-xl font-bold text-surface-900">Compliance Centre</h1>
-          <p className="text-sm text-surface-500 mt-1">{activeEntity.name} — Regulatory obligations and filing status</p>
+          <p className="text-sm text-surface-500 mt-1">{activeEntity.name} - Regulatory obligations and filing status</p>
         </div>
         {actionCount > 0 && (
           <div className={`flex items-center gap-2 rounded-lg px-4 py-2 ${overdue.length > 0 ? 'bg-danger-50 text-danger-700' : 'bg-warn-50 text-warn-700'}`}>
@@ -99,7 +99,7 @@ export function CompliancePage() {
           <EmptyState icon={CheckCircle2} title="All Clear" description="No pending obligations for this entity." />
         )}
       </Card>
-      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration — compliance data shown is simulated.</p>
+      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration - compliance data shown is simulated.</p>
     </div>
   );
 }

@@ -118,7 +118,7 @@ export const entities: Entity[] = [
 
 // ─── ENTITY RELATIONSHIPS ─────────────────────────────────
 export const entityRelationships: EntityRelationship[] = [
-  // Priya Sharma — Director of Acme Technologies
+  // Priya Sharma - Director of Acme Technologies
   {
     id: 'rel-001',
     personId: 'person-001',
@@ -127,7 +127,7 @@ export const entityRelationships: EntityRelationship[] = [
     effectiveFrom: '2019-03-15',
     status: 'ACTIVE',
   },
-  // Priya Sharma — Director of Zenith Labs
+  // Priya Sharma - Director of Zenith Labs
   {
     id: 'rel-002',
     personId: 'person-001',
@@ -136,7 +136,7 @@ export const entityRelationships: EntityRelationship[] = [
     effectiveFrom: '2021-07-22',
     status: 'ACTIVE',
   },
-  // Priya Sharma — Authorized Representative of ABC Industries
+  // Priya Sharma - Authorized Representative of ABC Industries
   {
     id: 'rel-003',
     personId: 'person-001',
@@ -146,7 +146,7 @@ export const entityRelationships: EntityRelationship[] = [
     effectiveTo: '2026-12-31',
     status: 'ACTIVE',
   },
-  // Rajesh Kumar (CA) — Professional for Acme Technologies
+  // Rajesh Kumar (CA) - Professional for Acme Technologies
   {
     id: 'rel-004',
     personId: 'person-002',
@@ -155,7 +155,7 @@ export const entityRelationships: EntityRelationship[] = [
     effectiveFrom: '2023-04-01',
     status: 'ACTIVE',
   },
-  // Rajesh Kumar — Professional for Zenith Labs
+  // Rajesh Kumar - Professional for Zenith Labs
   {
     id: 'rel-005',
     personId: 'person-002',
@@ -164,7 +164,7 @@ export const entityRelationships: EntityRelationship[] = [
     effectiveFrom: '2023-04-01',
     status: 'ACTIVE',
   },
-  // Rajesh Kumar — Professional for Bharat Steel
+  // Rajesh Kumar - Professional for Bharat Steel
   {
     id: 'rel-006',
     personId: 'person-002',
@@ -173,7 +173,7 @@ export const entityRelationships: EntityRelationship[] = [
     effectiveFrom: '2024-01-01',
     status: 'ACTIVE',
   },
-  // Rajesh Kumar — Professional for NovaTech
+  // Rajesh Kumar - Professional for NovaTech
   {
     id: 'rel-007',
     personId: 'person-002',
@@ -186,7 +186,7 @@ export const entityRelationships: EntityRelationship[] = [
 
 // ─── AUTHORITIES ───────────────────────────────────────────
 export const authorities: Authority[] = [
-  // Priya — full authority as Director at Acme
+  // Priya - full authority as Director at Acme
   {
     id: 'auth-001',
     relationshipId: 'rel-001',
@@ -195,7 +195,7 @@ export const authorities: Authority[] = [
     source: 'INHERENT',
     validFrom: '2019-03-15',
   },
-  // Priya — full authority as Director at Zenith
+  // Priya - full authority as Director at Zenith
   {
     id: 'auth-002',
     relationshipId: 'rel-002',
@@ -204,7 +204,7 @@ export const authorities: Authority[] = [
     source: 'INHERENT',
     validFrom: '2021-07-22',
   },
-  // Priya — limited authority as Authorized Rep at ABC Industries
+  // Priya - limited authority as Authorized Rep at ABC Industries
   {
     id: 'auth-003',
     relationshipId: 'rel-003',
@@ -214,7 +214,7 @@ export const authorities: Authority[] = [
     validFrom: '2023-01-01',
     validTo: '2026-12-31',
   },
-  // Rajesh — professional authority at Acme
+  // Rajesh - professional authority at Acme
   {
     id: 'auth-004',
     relationshipId: 'rel-004',
@@ -223,7 +223,7 @@ export const authorities: Authority[] = [
     source: 'DELEGATED',
     validFrom: '2023-04-01',
   },
-  // Rajesh — professional authority at Zenith
+  // Rajesh - professional authority at Zenith
   {
     id: 'auth-005',
     relationshipId: 'rel-005',
@@ -232,7 +232,7 @@ export const authorities: Authority[] = [
     source: 'DELEGATED',
     validFrom: '2023-04-01',
   },
-  // Rajesh — professional authority at Bharat Steel
+  // Rajesh - professional authority at Bharat Steel
   {
     id: 'auth-006',
     relationshipId: 'rel-006',
@@ -241,7 +241,7 @@ export const authorities: Authority[] = [
     source: 'DELEGATED',
     validFrom: '2024-01-01',
   },
-  // Rajesh — professional at NovaTech
+  // Rajesh - professional at NovaTech
   {
     id: 'auth-007',
     relationshipId: 'rel-007',
@@ -362,7 +362,7 @@ export const transactions: Transaction[] = [
     entityId: 'entity-001',
     serviceType: 'CHANGE_OF_DIRECTORS',
     formNumber: 'DIR-12',
-    description: 'Resignation of Director — Vikram Patel',
+    description: 'Resignation of Director - Vikram Patel',
     state: 'DRAFT',
     createdAt: '2026-08-25T11:00:00Z',
     updatedAt: '2026-08-25T11:00:00Z',
@@ -414,7 +414,7 @@ export const notifications: Notification[] = [
     id: 'notif-004',
     type: 'SYSTEM',
     title: 'Platform Maintenance',
-    message: 'Scheduled maintenance on 1 Sep 2026, 2:00 AM — 4:00 AM IST.',
+    message: 'Scheduled maintenance on 1 Sep 2026, 2:00 AM - 4:00 AM IST.',
     timestamp: '2026-08-27T10:00:00Z',
     read: true,
   },

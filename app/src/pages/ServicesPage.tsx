@@ -94,7 +94,7 @@ export function ServicesPage() {
           <h1 className="text-xl font-bold text-surface-900">Services</h1>
         </div>
         <p className="text-sm text-surface-500">
-          What would you like to do? Start from your intent — not a form number.
+          What would you like to do? Start from your intent - not a form number.
         </p>
       </div>
 
@@ -153,7 +153,7 @@ export function ServicesPage() {
           </div>
         </div>
       ))}
-      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration — only Incorporation (SPICe+) is fully functional.</p>
+      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration - only Incorporation (SPICe+) is fully functional.</p>
     </div>
   );
 }

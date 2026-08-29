@@ -42,7 +42,7 @@ export function EntityProvider({ children }: { children: ReactNode }) {
     return getAvailableEntitiesForPerson(person.id);
   }, [person]);
 
-  // Clear entity context on person change (Rule EC-11) — skip initial mount
+  // Clear entity context on person change (Rule EC-11) - skip initial mount
   useEffect(() => {
     if (prevPersonId.current !== person?.id) {
       prevPersonId.current = person?.id;

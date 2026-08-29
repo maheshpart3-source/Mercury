@@ -173,7 +173,7 @@ export function EntityProfilePage() {
               <MapPin className="h-5 w-5 text-surface-400 mt-0.5 shrink-0" />
               <div className="text-sm text-surface-700">
                 <p>{entity.registeredOffice.address}</p>
-                <p>{entity.registeredOffice.city}, {entity.registeredOffice.state} — {entity.registeredOffice.pincode}</p>
+                <p>{entity.registeredOffice.city}, {entity.registeredOffice.state} - {entity.registeredOffice.pincode}</p>
               </div>
             </div>
             {entity.authorizedCapital && (
@@ -322,7 +322,7 @@ export function EntityProfilePage() {
           </div>
         </Card>
       )}
-      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration — entity data shown is simulated.</p>
+      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration - entity data shown is simulated.</p>
     </div>
   );
 }

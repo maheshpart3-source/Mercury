@@ -117,7 +117,7 @@ export function RegistryPage() {
           <p className="text-xs text-surface-400 mt-1">Try "Acme" or "Bharat"</p>
         </div>
       )}
-      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration — search results are from simulated data.</p>
+      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration - search results are from simulated data.</p>
     </div>
   );
 }

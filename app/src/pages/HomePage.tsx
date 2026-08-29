@@ -22,7 +22,7 @@ export function HomePage() {
 
   return (
     <div className="space-y-8 animate-fade-in">
-      {/* Hero — restrained institutional header */}
+      {/* Hero - restrained institutional header */}
       <div className="rounded-lg border border-surface-200 bg-white p-8">
         <div className="flex items-start justify-between">
           <div>
@@ -31,7 +31,7 @@ export function HomePage() {
               Welcome back, {person?.name?.split(' ')[0]}
             </h1>
             <p className="text-surface-500 mt-1 text-sm max-w-lg">
-              Everything your entities need to stay compliant — filings, obligations, transactions, and registry services.
+              Everything your entities need to stay compliant - filings, obligations, transactions, and registry services.
             </p>
           </div>
           {attentionCount > 0 && (
@@ -183,7 +183,7 @@ export function HomePage() {
           ))}
         </div>
       </div>
-      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration — data shown is simulated.</p>
+      <p className="text-center text-xs text-surface-400 pt-4">Prototype demonstration - data shown is simulated.</p>
     </div>
   );
 }

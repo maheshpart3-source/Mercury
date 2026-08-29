@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Primary — MCA Navy (#0f284a) */
+  /* Primary - MCA Navy (#0f284a) */
   --color-primary-50: #EDF2F7;
   --color-primary-100: #D4DFEC;
   --color-primary-200: #A8BFDA;
@@ -13,28 +13,28 @@
   --color-primary-800: #091B33;
   --color-primary-900: #061324;
 
-  /* Success — MCA Green (#00c069) */
+  /* Success - MCA Green (#00c069) */
   --color-accent-50: #ECFDF5;
   --color-accent-100: #D1FAE5;
   --color-accent-200: #A7F3D0;
   --color-accent-500: #00c069;
   --color-accent-600: #00A85C;
 
-  /* Warning — MCA Orange (#ff9300) */
+  /* Warning - MCA Orange (#ff9300) */
   --color-warn-50: #FFF8EB;
   --color-warn-100: #FFEED4;
   --color-warn-200: #FFDCA3;
   --color-warn-500: #ff9300;
   --color-warn-600: #E08200;
 
-  /* Danger — MCA Red (#ea0000) */
+  /* Danger - MCA Red (#ea0000) */
   --color-danger-50: #FFF1F1;
   --color-danger-100: #FFE0E0;
   --color-danger-200: #FFC4C4;
   --color-danger-500: #ea0000;
   --color-danger-600: #CC0000;
 
-  /* Info — MCA Blue (#008ed0) */
+  /* Info - MCA Blue (#008ed0) */
   --color-info-500: #008ed0;
   --color-info-600: #007BB5;
 

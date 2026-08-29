@@ -160,7 +160,7 @@ export function IncorporationPage() {
         </button>
         <div>
           <h1 className="text-xl font-bold text-surface-900">Incorporate a Company</h1>
-          <p className="text-sm text-surface-500">SPICe+ (INC-32) — Simplified Proforma for Incorporating Company Electronically</p>
+          <p className="text-sm text-surface-500">SPICe+ (INC-32) - Simplified Proforma for Incorporating Company Electronically</p>
         </div>
       </div>
 
@@ -238,7 +238,7 @@ export function IncorporationPage() {
             </Alert>
             <div className="space-y-3">
               {[
-                { check: 'DIN/DPIN Status', result: person?.din ? `Active — ${person.din}` : 'Will be allotted via SPICe+', ok: true },
+                { check: 'DIN/DPIN Status', result: person?.din ? `Active - ${person.din}` : 'Will be allotted via SPICe+', ok: true },
                 { check: 'Identity Verification', result: person?.verificationLevel === 'VERIFIED' || person?.verificationLevel === 'PROFESSIONAL' ? 'Verified' : 'Pending', ok: person?.verificationLevel !== 'UNVERIFIED' },
                 { check: 'Digital Signature Certificate', result: 'Required for signing', ok: true },
                 { check: 'Minimum Directors', result: form.companyType === 'OPC' ? '1 Director + 1 Nominee' : form.companyType === 'PRIVATE' ? '2 Directors' : '3 Directors', ok: true },
@@ -286,7 +286,7 @@ export function IncorporationPage() {
               ))}
             </div>
             <Alert variant="info">
-              Estimated government fees: <span className="font-semibold">₹500 — ₹15,000</span> (based on authorised capital). Stamp duty varies by state.
+              Estimated government fees: <span className="font-semibold">₹500 - ₹15,000</span> (based on authorised capital). Stamp duty varies by state.
             </Alert>
           </div>
         )}
@@ -698,7 +698,7 @@ export function IncorporationPage() {
                 </div>
                 <div className="flex gap-8">
                   <dt className="text-surface-500">Status</dt>
-                  <dd><Badge variant="info">Submitted — Pending Review</Badge></dd>
+                  <dd><Badge variant="info">Submitted - Pending Review</Badge></dd>
                 </div>
               </dl>
             </div>

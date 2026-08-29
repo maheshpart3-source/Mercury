@@ -69,14 +69,14 @@ export function LoginPage() {
 
           <div className="mt-6 rounded-lg bg-surface-50 border border-surface-100 p-3">
             <p className="text-xs text-surface-500 text-center">
-              <span className="font-medium text-surface-600">Prototype Mode</span> — These personas demonstrate different authority contexts. In production, authentication uses Aadhaar-based eKYC and Digital Signature Certificates.
+              <span className="font-medium text-surface-600">Prototype Mode</span> - These personas demonstrate different authority contexts. In production, authentication uses Aadhaar-based eKYC and Digital Signature Certificates.
             </p>
           </div>
         </div>
       </div>
 
       <p className="mt-8 text-xs text-primary-300">
-        MCA Digital Platform — Future State Prototype
+        MCA Digital Platform - Future State Prototype
       </p>
     </div>
   );

@@ -38,7 +38,7 @@ export function TransactionStatusPage() {
     : null;
 
   const txnTitle = isNewIncorporation
-    ? 'Company Incorporation — SPICe+ (INC-32)'
+    ? 'Company Incorporation - SPICe+ (INC-32)'
     : existingTxn?.description || 'Transaction';
   const txnSrn = isNewIncorporation ? 'SRN-2026-INC-4821' : existingTxn?.srn || 'Pending';
   const txnForm = isNewIncorporation ? 'INC-32 (SPICe+)' : existingTxn?.formNumber || '';

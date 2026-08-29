@@ -23,12 +23,12 @@ export function PlaceholderPage({ page }: { page: string }) {
     <div className="space-y-6">
       <div>
         <h1 className="text-xl font-bold text-surface-900">{config.title}</h1>
-        <p className="text-sm text-surface-500 mt-1">{activeEntity.name} — {config.description}</p>
+        <p className="text-sm text-surface-500 mt-1">{activeEntity.name} - {config.description}</p>
       </div>
       <Card padding="lg">
         <EmptyState
           icon={config.icon}
-          title={`${config.title} — Coming Soon`}
+          title={`${config.title} - Coming Soon`}
           description="This section will be available in a future iteration of the prototype."
         />
       </Card>
