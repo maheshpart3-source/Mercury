@@ -19,13 +19,8 @@ export function Header() {
       {/* Left: Logo + Entity Switcher */}
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-800">
-            <span className="text-sm font-bold text-white">M</span>
-          </div>
-          <div className="hidden sm:block">
-            <p className="text-sm font-semibold text-primary-800 leading-tight">MCA</p>
-            <p className="text-[10px] text-surface-500 leading-tight">Digital Platform</p>
-          </div>
+          <img src="/mca-logo.svg" alt="MCA" className="h-8 hidden sm:block" />
+          <img src="/mca-logo.svg" alt="MCA" className="h-7 sm:hidden w-auto max-w-[140px]" />
         </div>
 
         <div className="h-8 w-px bg-surface-200" />

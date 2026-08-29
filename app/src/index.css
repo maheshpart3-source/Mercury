@@ -1,35 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  /* Primary — Deep blue institutional accent (design system: #1D4ED8) */
-  --color-primary-50: #EFF6FF;
-  --color-primary-100: #DBEAFE;
-  --color-primary-200: #BFDBFE;
-  --color-primary-300: #93C5FD;
-  --color-primary-400: #60A5FA;
-  --color-primary-500: #3B82F6;
-  --color-primary-600: #1D4ED8;
-  --color-primary-700: #1E40AF;
-  --color-primary-800: #1E3A8A;
-  --color-primary-900: #172554;
+  /* Primary — MCA Navy (#0f284a) */
+  --color-primary-50: #EDF2F7;
+  --color-primary-100: #D4DFEC;
+  --color-primary-200: #A8BFDA;
+  --color-primary-300: #7196BE;
+  --color-primary-400: #3D6D9E;
+  --color-primary-500: #1A3F6B;
+  --color-primary-600: #0f284a;
+  --color-primary-700: #0C2240;
+  --color-primary-800: #091B33;
+  --color-primary-900: #061324;
 
-  /* Success */
-  --color-accent-50: #F0FDF4;
-  --color-accent-100: #DCFCE7;
-  --color-accent-500: #16A34A;
-  --color-accent-600: #15803D;
+  /* Success — MCA Green (#00c069) */
+  --color-accent-50: #ECFDF5;
+  --color-accent-100: #D1FAE5;
+  --color-accent-200: #A7F3D0;
+  --color-accent-500: #00c069;
+  --color-accent-600: #00A85C;
 
-  /* Warning */
-  --color-warn-50: #FFFBEB;
-  --color-warn-100: #FEF3C7;
-  --color-warn-500: #D97706;
-  --color-warn-600: #B45309;
+  /* Warning — MCA Orange (#ff9300) */
+  --color-warn-50: #FFF8EB;
+  --color-warn-100: #FFEED4;
+  --color-warn-200: #FFDCA3;
+  --color-warn-500: #ff9300;
+  --color-warn-600: #E08200;
 
-  /* Danger */
-  --color-danger-50: #FEF2F2;
-  --color-danger-100: #FEE2E2;
-  --color-danger-500: #DC2626;
-  --color-danger-600: #B91C1C;
+  /* Danger — MCA Red (#ea0000) */
+  --color-danger-50: #FFF1F1;
+  --color-danger-100: #FFE0E0;
+  --color-danger-200: #FFC4C4;
+  --color-danger-500: #ea0000;
+  --color-danger-600: #CC0000;
+
+  /* Info — MCA Blue (#008ed0) */
+  --color-info-500: #008ed0;
+  --color-info-600: #007BB5;
 
   /* Neutral surfaces */
   --color-surface-50: #F8FAFC;

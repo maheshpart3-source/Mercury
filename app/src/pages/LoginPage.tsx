@@ -15,19 +15,13 @@ export function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-surface-900 px-4">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-primary-600 px-4">
       <div className="mb-10 text-center">
-        <div className="mb-5 flex items-center justify-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-white">
-            <span className="text-lg font-bold text-primary-800">M</span>
-          </div>
-          <div className="text-left">
-            <h1 className="text-lg font-semibold text-white tracking-tight">Ministry of Corporate Affairs</h1>
-            <p className="text-xs text-surface-400">Government of India</p>
-          </div>
+        <div className="mb-5 flex justify-center">
+          <img src="/mca-logo.svg" alt="Ministry of Corporate Affairs" className="h-14 brightness-0 invert" />
         </div>
-        <p className="text-sm text-surface-400 max-w-sm">
-          Entity-centric regulatory operating platform.
+        <p className="text-sm text-primary-200 max-w-sm">
+          Entity-centric regulatory operating platform
         </p>
       </div>
 
@@ -81,7 +75,7 @@ export function LoginPage() {
         </div>
       </div>
 
-      <p className="mt-8 text-xs text-surface-500">
+      <p className="mt-8 text-xs text-primary-300">
         MCA Digital Platform — Future State Prototype
       </p>
     </div>
